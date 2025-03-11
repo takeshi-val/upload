@@ -33,15 +33,14 @@ python -c "from eth_account import Account; print(Account)"
 deactivate
 
 # Создание Python-скрипта для генерации кошельков
-cat <<EOF > generate_wallets.py
 import os
 import csv
 from eth_account import Account
 
 def print_banner():
-    print("\\n==============================")
+    print("\n==============================")
     print("      Ethereum Keys")
-    print("==============================\\n")
+    print("==============================\n")
 
 def get_wallet_count():
     while True:
@@ -69,9 +68,12 @@ def write_to_csv(wallets, filename="wallets.csv"):
         writer = csv.writer(file)
         if not file_exists:
             writer.writerow(["Address", "Private Key"])
-        writer.writerows(wallets)
-
-    print(f"Кошельки добавлены в {filename}")
+        for address, private_key in wallets:
+            writer.writerow([address, private_key])
+    
+    file_path = os.path.abspath(filename)
+    print(f"Кошельки добавлены в файл: {filename}")
+    print(f"Полный путь: {file_path}")
 
 def main():
     print_banner()
