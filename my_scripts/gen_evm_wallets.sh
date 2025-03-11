@@ -1,12 +1,30 @@
 #!/bin/bash
 
+# Цвета текста
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m' # Нет цвета (сброс цвета)
+
+# Проверка наличия curl и установка, если не установлен
+if ! command -v curl &> /dev/null; then
+    sudo apt update
+    sudo apt install curl -y
+fi
+sleep 1
+
+# Отображаем логотип
+curl -s https://raw.githubusercontent.com/takeshi-val/upload/refs/heads/main/my_scripts/logo.sh | bash
+
 # Приветственное сообщение
 echo "============================="
-echo " TAKESHI SCRIPTS "
 echo " Этот скрипт создаст нужное вам количество EVM адресов и приватных ключей "
 echo "============================="
 echo ""
-echo "Этот скрипт установит все зависимости и запустит генератор кошельков."
+echo "Запускаем скрипт и установливаем все зависимости"
 echo ""
 read -p "Нажмите Enter для продолжения..."
 
