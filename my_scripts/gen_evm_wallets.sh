@@ -88,4 +88,5 @@ EOF
 chmod +x generate_wallets.py
 
 # Запуск скрипта
-python3 generate_wallets.py
+myenv/bin/python3 generate_wallets.py
+
