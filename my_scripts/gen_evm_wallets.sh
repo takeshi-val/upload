@@ -9,8 +9,13 @@ echo "Этот скрипт установит все зависимости и 
 echo ""
 read -p "Нажмите Enter для продолжения..."
 
+# Обновление пакетов
+sudo apt update && sudo apt upgrade
+
 # Установка Python и pip
-sudo apt update && sudo apt install -y python3 python3-pip 
+sudo apt install -y python3
+sudo apt install -y python3-pip
+sudo apt install python3-xyz
 
 # Установка зависимостей
 pip3 install eth_account
