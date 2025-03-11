@@ -29,7 +29,10 @@ sudo apt install -y python3-pip
 sudo apt install python3-xyz
 
 # Установка зависимостей
-pip3 install eth_account
+python3 -m venv myenv
+source myenv/bin/activate
+pip install eth_account
+deactivate
 
 # Создание Python-скрипта для генерации кошельков
 cat <<EOF > generate_wallets.py
