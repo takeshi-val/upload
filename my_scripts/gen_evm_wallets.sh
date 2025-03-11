@@ -66,7 +66,7 @@ def write_to_csv(wallets, filename="wallets.csv"):
     mode = "a" if file_exists else "w"
 
     with open(filename, mode, newline="") as file:
-        writer = csv.writer(file)
+        writer = csv.writer(file, delimiter=';')
         if not file_exists:
             writer.writerow(["Address", "Private Key"])
         for address, private_key in wallets:
