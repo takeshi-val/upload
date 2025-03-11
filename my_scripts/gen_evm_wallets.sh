@@ -58,7 +58,7 @@ from eth_account import Account
 
 def print_banner():
     print("\n==============================")
-    print("      Ethereum Keys")
+    print("     Generate Ethereum Keys")
     print("==============================\n")
 
 def get_wallet_count():
