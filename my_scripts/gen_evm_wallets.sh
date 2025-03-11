@@ -10,10 +10,10 @@ echo ""
 read -p "Нажмите Enter для продолжения..."
 
 # Установка Python и pip
-sudo apt update && sudo apt install -y python3 python3-pip
+sudo apt update && sudo apt install -y python3 python3-pip 
 
 # Установка зависимостей
-pip3 install eth-account
+pip3 install eth_account
 
 # Создание Python-скрипта для генерации кошельков
 cat <<EOF > generate_wallets.py
