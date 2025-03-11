@@ -33,6 +33,7 @@ python -c "from eth_account import Account; print(Account)"
 deactivate
 
 # Создание Python-скрипта для генерации кошельков
+cat <<EOF > generate_wallets.py
 import os
 import csv
 from eth_account import Account
